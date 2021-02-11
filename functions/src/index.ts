@@ -1,9 +1,18 @@
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
+import * as admin from "firebase-admin";
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+export const randomnumber = functions.https.onRequest((req, res) => {
+  const randomNumber = Math.round(Math.random() * 100);
+  res.send(randomNumber.toString());
+});
+
+interface sayHelloInterface{
+  userName: string;
+}
+export const sayhello = functions.https.onCall((data: sayHelloInterface, context) => {
+  return `Hello is said by ${data.userName}`
+});
+
+export const newusersignup = functions.auth.user().onCreate((user):void => {
+  console.log('Auth Trigger has been triggered');
+});
