@@ -4,7 +4,7 @@ import {auth} from "../config/firebaseAuth";
 export default function Auth(){
     const addUser = async () =>{
         try{
-            const email = "piyal@hone.com";
+            const email = "nimki@hone.com";
             const password = "12344321";
             const credentials = await auth.createUserWithEmailAndPassword(email,password);
             console.log('New user has been created');
