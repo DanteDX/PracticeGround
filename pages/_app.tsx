@@ -1,9 +1,12 @@
 import "../styles/globals.css";
+import { RecoilRoot } from "recoil";
 
 function App({ Component, pageProps }) {
   return (
     <>
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
     </>
   );
 }
