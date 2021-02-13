@@ -15,6 +15,7 @@ const Validate = () =>{
         console.log(schema.validate('1234',{list:true}));
         console.log(schema.validate('helloworrlddd'));
         console.log(schema.validate('sample'));
+        console.log(schema.validate('ABCD'));
     }
     return(
         <>
